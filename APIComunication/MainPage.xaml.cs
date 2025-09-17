@@ -36,20 +36,19 @@ namespace APIComunication
                         var weatherDescArray = root.GetProperty("current").GetProperty("weather_descriptions");
                         var weather_desc = weatherDescArray[0].GetString();
                         var windSpeed = root.GetProperty("current").GetProperty("wind_speed").GetInt32();
+                        var location = root.GetProperty("location").GetProperty("name").GetString();
+                        var dateTime  = root.GetProperty("location").GetProperty("localtime").GetString();
+
 
                         // Get weather_icons array and use the first icon
                         var weatherIconsArray = root.GetProperty("current").GetProperty("weather_icons");
                         var weatherIconUrl = weatherIconsArray[0].GetString();
 
-                        Console.WriteLine($"Temperature: {temp}°C");
-                        Console.WriteLine($"Weather Description: {weather_desc}");
-                        Console.WriteLine($"Wind Speed: {windSpeed} km/h");
-                        Console.WriteLine($"Weather Icon: {weatherIconUrl}");
-
-                        LocationLabel.Text = city;
+                        LocationLabel.Text = location;
                         TempLabel.Text = $"{temp}°C";
                         WeatherLabel.Text = weather_desc;
                         WindLabel.Text = $"{windSpeed} km/h";
+                        DataTimeLabel.Text = dateTime;
 
                         // Set the icon image source
                         WeatherIcon.Source = weatherIconUrl;

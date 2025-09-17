@@ -1,7 +1,7 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APIComunication.MainPage"
-             BackgroundColor="White"
+             BackgroundColor="#000080"
              Padding="20">
 
     <VerticalStackLayout Spacing="20">
@@ -20,6 +20,29 @@
                TextColor="Black"
                Margin="0,10" />
 
+        <Frame BackgroundColor="Transparent"
+                CornerRadius="15"
+                Padding="15"
+                HasShadow="True"
+                HorizontalOptions="Center">
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                <!--Location Name -->
+                <Label x:Name="LocationLabel"
+                Text="-"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+                
+                <!--DateTime-->
+                <Label x:Name="DataTimeLabel"
+                Text="-"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+        </Frame>
+
         <Image x:Name="WeatherIcon"
            HeightRequest="80"
            WidthRequest="80"
@@ -35,33 +58,55 @@
                 FontSize="18" />
 
         <!-- Result Card -->
-        <Frame BackgroundColor="#F2F2F2"
-               CornerRadius="15"
-               Padding="15"
-               HasShadow="True">
+        <Frame BackgroundColor="Transparent"
+       CornerRadius="15"
+       Padding="15"
+       HasShadow="True"
+       HorizontalOptions="Center">
 
-            <VerticalStackLayout Spacing="10">
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
 
-                <Label x:Name="LocationLabel"
-                       Text="City: -"
-                       FontSize="20"
-                       TextColor="Black"/>
+                <!-- Header row -->
+                <HorizontalStackLayout Spacing="120" HorizontalOptions="Center">
+                    <Label Text="Temperature"
+                   FontAttributes="Italic"
+                   FontSize="18"
+                   TextColor="Grey"
+                   HorizontalOptions="Center"/>
 
-                <Label x:Name="TempLabel"
-                       Text="Temperature: -"
-                       FontSize="20"
-                       TextColor="Black"/>
+                    <Label Text="Weather"
+                   FontAttributes="Italic"
+                   FontSize="18"
+                   TextColor="Grey"
+                   HorizontalOptions="Center"/>
 
-                <Label x:Name="WeatherLabel"
-                       Text="Weather: -"
-                       FontSize="20"
-                       TextColor="Black"/>
+                    <Label Text="Wind Speed"
+                   FontAttributes="Italic"
+                   FontSize="18"
+                   TextColor="Grey"
+                   HorizontalOptions="Center"/>
+                </HorizontalStackLayout>
 
-                <Label x:Name="WindLabel"
-                       Text="Wind Speed: -"
-                       FontSize="20"
-                       TextColor="Black"/>
+                <!-- Value row -->
+                <HorizontalStackLayout Spacing="120" HorizontalOptions="Center">
+                    <Label x:Name="TempLabel"
+                   Text="-" 
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+
+                    <Label x:Name="WeatherLabel"
+                   Text="-"
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+
+                    <Label x:Name="WindLabel"
+                   Text="-"
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+                </HorizontalStackLayout>
+
             </VerticalStackLayout>
         </Frame>
+
     </VerticalStackLayout>
 </ContentPage>
