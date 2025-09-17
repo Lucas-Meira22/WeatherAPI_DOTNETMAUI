@@ -1,0 +1,67 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APIComunication.MainPage"
+             BackgroundColor="White"
+             Padding="20">
+
+    <VerticalStackLayout Spacing="20">
+
+        <!-- Title -->
+        <Label Text="Weather App"
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <!-- Input for city -->
+        <Entry x:Name="CityEntry"
+               Placeholder="Enter city name..."
+               FontSize="18"
+               BackgroundColor="#F2F2F2"
+               TextColor="Black"
+               Margin="0,10" />
+
+        <Image x:Name="WeatherIcon"
+           HeightRequest="80"
+           WidthRequest="80"
+           HorizontalOptions="Center"
+           IsVisible="False" />
+
+        <!-- Button -->
+        <Button Text="Get Weather"
+                Clicked="OnGetWeatherClicked"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                CornerRadius="10"
+                FontSize="18" />
+
+        <!-- Result Card -->
+        <Frame BackgroundColor="#F2F2F2"
+               CornerRadius="15"
+               Padding="15"
+               HasShadow="True">
+
+            <VerticalStackLayout Spacing="10">
+
+                <Label x:Name="LocationLabel"
+                       Text="City: -"
+                       FontSize="20"
+                       TextColor="Black"/>
+
+                <Label x:Name="TempLabel"
+                       Text="Temperature: -"
+                       FontSize="20"
+                       TextColor="Black"/>
+
+                <Label x:Name="WeatherLabel"
+                       Text="Weather: -"
+                       FontSize="20"
+                       TextColor="Black"/>
+
+                <Label x:Name="WindLabel"
+                       Text="Wind Speed: -"
+                       FontSize="20"
+                       TextColor="Black"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
