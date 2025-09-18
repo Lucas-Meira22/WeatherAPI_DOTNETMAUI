@@ -14,11 +14,15 @@
 
         <!-- Input for city -->
         <Entry x:Name="CityEntry"
-               Placeholder="Enter city name..."
-               FontSize="18"
-               BackgroundColor="#F2F2F2"
-               TextColor="Black"
-               Margin="0,10" />
+         Placeholder="Enter city name..."
+         FontSize="18"
+         BackgroundColor="#F2F2F2"
+         TextColor="Black"
+         Margin="0,10"
+         WidthRequest="220"
+         HorizontalOptions="Center" />
+
+
 
         <Frame BackgroundColor="Transparent"
                 CornerRadius="15"
@@ -44,10 +48,19 @@
         </Frame>
 
         <Image x:Name="WeatherIcon"
-           HeightRequest="80"
-           WidthRequest="80"
+           HeightRequest="150"
+           WidthRequest="150"
            HorizontalOptions="Center"
-           IsVisible="False" />
+           IsVisible="False"
+           Aspect="AspectFill">
+            <Image.Clip>
+                <EllipseGeometry Center="75,75"
+                         RadiusX="75"
+                         RadiusY="75"/>
+            </Image.Clip>
+
+        </Image>
+
 
         <!-- Button -->
         <Button Text="Get Weather"
@@ -55,7 +68,9 @@
                 BackgroundColor="#2196F3"
                 TextColor="White"
                 CornerRadius="10"
-                FontSize="18" />
+                FontSize="18"
+                WidthRequest="220"
+                HorizontalOptions="Center" />
 
         <!-- Result Card -->
         <Frame BackgroundColor="Transparent"
@@ -67,42 +82,45 @@
             <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
 
                 <!-- Header row -->
-                <HorizontalStackLayout Spacing="120" HorizontalOptions="Center">
+                <HorizontalStackLayout Spacing="40" HorizontalOptions="Center">
                     <Label Text="Temperature"
                    FontAttributes="Italic"
-                   FontSize="18"
+                   FontSize="16"
                    TextColor="Grey"
                    HorizontalOptions="Center"/>
 
                     <Label Text="Weather"
                    FontAttributes="Italic"
-                   FontSize="18"
+                   FontSize="16"
                    TextColor="Grey"
                    HorizontalOptions="Center"/>
 
                     <Label Text="Wind Speed"
                    FontAttributes="Italic"
-                   FontSize="18"
+                   FontSize="16"
                    TextColor="Grey"
                    HorizontalOptions="Center"/>
                 </HorizontalStackLayout>
 
                 <!-- Value row -->
-                <HorizontalStackLayout Spacing="120" HorizontalOptions="Center">
+                <HorizontalStackLayout Spacing="60" HorizontalOptions="Center">
                     <Label x:Name="TempLabel"
-                   Text="-" 
-                   FontSize="20"
-                   HorizontalOptions="Center"/>
+                    Text="-" 
+                    FontSize="16"
+                    TextColor="WhiteSmoke"
+                    HorizontalOptions="Center"/>
 
                     <Label x:Name="WeatherLabel"
-                   Text="-"
-                   FontSize="20"
-                   HorizontalOptions="Center"/>
+                    Text="-"
+                    FontSize="16"
+                    TextColor="WhiteSmoke"
+                    HorizontalOptions="Center"/>
 
                     <Label x:Name="WindLabel"
-                   Text="-"
-                   FontSize="20"
-                   HorizontalOptions="Center"/>
+                    Text="-"
+                    FontSize="16"
+                    TextColor="WhiteSmoke"
+                    HorizontalOptions="Center"/>
                 </HorizontalStackLayout>
 
             </VerticalStackLayout>
